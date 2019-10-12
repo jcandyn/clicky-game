@@ -30,11 +30,11 @@ class Game extends React.Component {
         // this.setState({ count: this.state.count + 1 });
         console.log(newArray)
         // alert('you lose!')
-        // this.state.score > this.state.highScore ? this.setState({
-        //   highScore: this.state.score
-        // }) : this.setState({
-        //   highScore: this.state.highScore
-        // })
+        this.state.score > this.state.highScore ? this.setState({
+          highScore: this.state.score
+        }) : this.setState({
+          highScore: this.state.highScore
+        })
         this.setState({ score: 0});
         }
 

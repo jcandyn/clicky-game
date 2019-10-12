@@ -1,7 +1,7 @@
 import React from 'react';
 import Jumbotron from './components/Jumbotron'
 import Game from './components/Game'
-import './App.css';
+import './components/css/App.css';
 
 
 class App extends React.Component {

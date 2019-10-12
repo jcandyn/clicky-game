@@ -4,12 +4,8 @@
     padding: 0 1px 
   } 
   
-  /* Create four equal columns that sits next to each other */
   .col-md-2 {
     flex: 25%;
-    /* max-width: 25% ; 
-    /* padding: 0 1px ;
-    /* width: 150px; */
     padding: 1px;
 
   }
@@ -19,7 +15,7 @@
     vertical-align: middle ;
     width: 100% ;
     height: auto;
-    border: rgb(178, 244, 112);
+    border: rgb(248,125,190);
     border-width: 7px;
     border-style: outset;
     cursor: pointer;

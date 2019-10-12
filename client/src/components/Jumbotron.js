@@ -1,5 +1,5 @@
 import React from 'react';
-import "../Jumbotron.css";
+import "./css/Jumbotron.css";
 
 class Jumbotron extends React.Component {
 
@@ -9,9 +9,9 @@ class Jumbotron extends React.Component {
       return (
           <div>
               <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Clicky Game</h1>
-    <p class="lead">Click an image to start!</p>
+  <div className="container">
+    <h1 className="display-4 text-right">Clicky Game</h1>
+    <p className="lead text-right">Click an image to start!</p>
   </div>
 </div>
           </div>

@@ -6,3 +6,9 @@
     background-position-y: 1300px;
 
 }
+
+.text-right {
+    text-shadow: 2px 2px 2px rgb(248,125,190);
+    color: rgb(231,231,231);
+    font-weight: 700;
+}

@@ -7,9 +7,6 @@ let newArray = []
 
 class Game extends React.Component {
 
-  
-  //  imageId++
-    // constructor(props) {
       state = {
         highScore: 0,
         score: 0,
@@ -19,39 +16,37 @@ class Game extends React.Component {
       handleIncrement = (id) => {
       
         if (!newArray.includes(id)) {
-         
+          newArray.push(links.find(link => link === id))
+          console.log(newArray.length)
           this.setState({ score: this.state.score + 1 });
-    
-         
         }
 
-
         else if (newArray.includes(id)) {
-        // this.setState({ count: this.state.count + 1 });
         console.log(newArray)
-        // alert('you lose!')
         this.state.score > this.state.highScore ? this.setState({
           highScore: this.state.score
         }) : this.setState({
           highScore: this.state.highScore
         })
+        newArray = []
         this.setState({ score: 0});
+         
         }
 
-        newArray.push(links.find(link => link === id))
-        console.log(newArray.length)
+       
+
+        
       };
 
     render() {
 
       return (
-        <div>
+        <div className="container">
              <h1>Score: {this.state.score} </h1>
         {/* {(this.state.highScore < this.state.score) ? this.setState({highScore: this.state.score}) : this.setState({highScore: this.state.highScore})}  */}
         <h1>Highest Score: {this.state.highScore}</h1>
         {links.map(link => <Card handleIncrement = {this.handleIncrement} thisLink={link} id={link}/>)}
-        </div>
-        
+        </div>  
       )
     }
   }

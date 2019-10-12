@@ -1,4 +1,5 @@
 import React from 'react';
+import Jumbotron from './Jumbotron';
 
 class Header extends React.Component {
 
@@ -6,14 +7,11 @@ class Header extends React.Component {
     render() {
        
       return (
-          <div>
-              <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Clicky Game</h1>
-    <p class="lead">Click an image to start!</p>
-  </div>
-</div>
-          </div>
+        <div>
+      <h1>{this.props.score}</h1>
+        <Jumbotron/>
+        </div>
+ 
       )
     }
   }

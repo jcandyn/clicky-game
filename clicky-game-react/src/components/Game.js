@@ -3,7 +3,8 @@ import Card from './Card'
 
 let links = ["https://cdn.pixabay.com/photo/2017/01/24/23/59/simpsons-2006756__480.jpg", "https://cdn.pixabay.com/photo/2017/01/25/00/00/simpsons-2006761__480.jpg", "https://cdn.pixabay.com/photo/2017/01/24/23/59/homer-2006749__480.jpg", "https://cdn.pixabay.com/photo/2016/12/20/21/30/toy-1921523__480.jpg", "https://cdn.pixabay.com/photo/2016/12/20/21/29/simpsons-1921521__480.jpg", "https://cdn.pixabay.com/photo/2016/12/20/21/29/toy-1921522__480.jpg", "https://cdn.pixabay.com/photo/2016/12/20/21/30/toy-1921524__480.jpg"]
 
-let newArray = links
+let newArray = []
+
 class Game extends React.Component {
 
   
@@ -16,19 +17,29 @@ class Game extends React.Component {
       };
 
       handleIncrement = (id) => {
-        console.log(newArray.length)
+      
         if (!newArray.includes(id)) {
-          alert('you lose!')
-          this.setState({ score: 0});
+         
+          this.setState({ score: this.state.score + 1 });
+    
          
         }
 
+
         else if (newArray.includes(id)) {
         // this.setState({ count: this.state.count + 1 });
-        newArray = links.filter(link => link !== id)
         console.log(newArray)
-        this.setState({ score: this.state.score + 1 });
+        // alert('you lose!')
+        // this.state.score > this.state.highScore ? this.setState({
+        //   highScore: this.state.score
+        // }) : this.setState({
+        //   highScore: this.state.highScore
+        // })
+        this.setState({ score: 0});
         }
+
+        newArray.push(links.find(link => link === id))
+        console.log(newArray.length)
       };
 
     render() {

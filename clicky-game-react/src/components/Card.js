@@ -8,7 +8,7 @@ class Card extends React.Component {
         return(
           <div className="row">
         <div className="column" onClick = {() => { this.props.handleIncrement(this.props.id); 
-        // this.props.shuffle(this.props.id)
+        this.props.shuffle(this.props.id)
         ; }} >
         <img  src={this.props.thisLink} alt="image of cartoon"/>
       </div>

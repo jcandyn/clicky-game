@@ -13,6 +13,13 @@ class Game extends React.Component {
         loss: 0
       };
 
+      shuffle = (id) => {
+        let randomIndex = Math.floor(Math.random() * links.length);
+        let indexToSwap = links.indexOf(id)
+        links[indexToSwap] = links[randomIndex]
+        links[randomIndex] = id
+      }
+
       handleIncrement = (id) => {
       
         if (!newArray.includes(id)) {
@@ -30,7 +37,6 @@ class Game extends React.Component {
         })
         newArray = []
         this.setState({ score: 0});
-         
         }
 
        
@@ -45,7 +51,7 @@ class Game extends React.Component {
              <h1>Score: {this.state.score} </h1>
         {/* {(this.state.highScore < this.state.score) ? this.setState({highScore: this.state.score}) : this.setState({highScore: this.state.highScore})}  */}
         <h1>Highest Score: {this.state.highScore}</h1>
-        {links.map(link => <Card handleIncrement = {this.handleIncrement} thisLink={link} id={link}/>)}
+        {links.map(link => <Card handleIncrement = {this.handleIncrement} shuffle={this.shuffle} thisLink={link} id={link}/>)}
         </div>  
       )
     }

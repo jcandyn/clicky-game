@@ -38,10 +38,6 @@ class Game extends React.Component {
         newArray = []
         this.setState({ score: 0});
         }
-
-       
-
-        
       };
 
     render() {
@@ -51,7 +47,9 @@ class Game extends React.Component {
              <h1>Score: {this.state.score} </h1>
         {/* {(this.state.highScore < this.state.score) ? this.setState({highScore: this.state.score}) : this.setState({highScore: this.state.highScore})}  */}
         <h1>Highest Score: {this.state.highScore}</h1>
+        <div className="row">
         {links.map(link => <Card handleIncrement = {this.handleIncrement} shuffle={this.shuffle} thisLink={link} id={link}/>)}
+        </div>
         </div>  
       )
     }
